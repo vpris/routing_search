@@ -1,0 +1,46 @@
+[
+    {
+        "name": "neutron/sphinxsearch-api",
+        "version": "2.0.8.1",
+        "version_normalized": "2.0.8.1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/romainneutron/Sphinx-Search-API-PHP-Client.git",
+            "reference": "a18fd84951ea1fb006387e2d099d025235b14d34"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/romainneutron/Sphinx-Search-API-PHP-Client/zipball/a18fd84951ea1fb006387e2d099d025235b14d34",
+            "reference": "a18fd84951ea1fb006387e2d099d025235b14d34",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=4"
+        },
+        "time": "2018-07-09T14:18:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "sphinxapi.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Aksyonoff",
+                "homepage": "http://sphinxsearch.com/"
+            }
+        ],
+        "description": "SphinxSearch PHP API",
+        "homepage": "http://sphinxsearch.com/",
+        "keywords": [
+            "Sphinx Search",
+            "api",
+            "search-engine"
+        ]
+    }
+]
