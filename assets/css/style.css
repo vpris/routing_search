@@ -1,10 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Fira+Sans');
- @import url('../css/font-awesome.min.css');
- * {
-     font-family: 'Fira Sans', sans-serif;
-}
-
-*/
 html, body {
     margin: 0;
     height: 100%;
@@ -119,14 +112,14 @@ html, body {
     border-bottom: 1px solid #ebebeb;
 }
 .wrapper .headerContent {
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
 }
 .headerContent .logoContainer {
     padding: 5px 20px;
 }
 .headerContent .searchContainer {
-    flex: 1;
+    /* flex: 1; */
 }
 .headerContent .searchContainer form {
     margin: 15px 0 20px 0;
@@ -841,7 +834,7 @@ footer p {
     border-radius: 20px;
     border: 3px solid #9E9E9E;
 }
-#searchResult {
+.searchResult {
     width: 850px;
     min-height: 180px;
     max-height: 465px;
@@ -851,14 +844,15 @@ footer p {
     background: #f9f9f9;
     border-radius: 8px;
     box-shadow: #404040 0 0 7px 0;
-    transition: height 3000ms;
+    cursor: pointer;
 }
 
-#searchResult.is-active {
-    height: 500px;
+.searchResultActive {
+    max-height: 2100px;
+    overflow: auto;
 }
 
-#searchResult:hover {
+.searchResult:hover {
     box-shadow: none;
     box-shadow: #404040 4px 0 50px -4px;
 }
@@ -996,7 +990,7 @@ footer p {
 /* */
 .toolTip {
     color: #fff;
-    background: #378eca;
+    background: #298ddc;
     height: 45px;
     border: none;
     border-radius: 30px;
@@ -1008,6 +1002,22 @@ footer p {
     background: #03A9F4;
     cursor: pointer;
 }
+
+.toolTips {
+    color: #fff;
+    background: #298ddc;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 2px solid rgb(54, 19, 19);
+}
+.toolTips:hover {
+    color: #fff;
+    background: #03A9F4;
+    cursor: pointer;
+}
+
 .rightPages {
     float: right;
     width: 730px;
@@ -1387,4 +1397,13 @@ header {
 .material-switch > input[type="checkbox"]:checked + label::after {
     background: inherit;
     left: 20px;
+}
+
+.showMore {
+    float: left;
+    margin: 0 15px;
+    font-size: 20px;
+    width: 50px;
+    height: 35px;
+    border-radius: 6px;
 }

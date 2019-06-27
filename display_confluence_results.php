@@ -1,16 +1,20 @@
 <?php
+
     if(isset($_GET["term"])) {
         $printTerm = $_GET["term"];
     }
     else {
-        exit("Нужно вернуться к поиску");
+        exit("Нужно вернуться к поиску и ввести поисковую фразу." . "<br>" . "<a href='http://localhost/foundationProject/display_confluence_results.php?term=&type=confluence'>Назад к поиску</a>" );
     }
     $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
     $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
+    $getChbx = $_GET['chbx'];
+    $getChbxAtt = $_GET['chbxAtt'];
+
     // Скрипт чекбокса
-    if(isset($_GET['chbx']) && 
-    $_GET['chbx'] == 'Yes') 
+    if(isset($getChbx) &&
+        $getChbx == 'Yes')
     {
         $chbx = 'title';
     }
@@ -19,8 +23,8 @@
         $chbx = 'text';
     }
 
-    if(isset($_GET['chbxAtt']) && 
-    $_GET['chbxAtt'] == 'Yes') 
+    if(isset($getChbxAtt) &&
+        $getChbxAtt == 'Yes')
     {
         $chbxAtt = 'attachment';
     }
@@ -28,6 +32,8 @@
     {
         $chbxAtt = 'page';
     }
+
+
 ?>
 
 <html lang="en">
@@ -81,29 +87,65 @@
                                 </a>
                             </li>
                             <li class="<?php echo $type == 'ucmdb' ? 'active' : '' ?>" title='Поиск по ucmdb'>
-                                <a href='<?php echo "display_ucmdb_results.php?term=$printTerm&type=ucmdb"; ?>'>
+                                <a href='<?= "display_ucmdb_results.php?term=$printTerm&type=ucmdb"; ?>'>
                                     uCMDB
                                 </a>
                             </li>
                             <li class="<?php echo $type == 'confluence' ? 'active' : '' ?>" title='Поиск по confluence'>
-                                <a href='<?php echo "display_confluence_results.php?term=$printTerm&type=confluence"; ?>'>
+                                <a href='<?= "display_confluence_results.php?term=$printTerm&type=confluence"; ?>'>
                                     Confluence
                                 </a>
                             </li>
-                            <li class="<?php echo $type == 'images' ? 'active' : '' ?>" title='Поиск по изображениям роутинга'>
-                                <a href='<?php echo "display_images_results.php?term=$printTerm&type=images"; ?>'>
+                            <li class="<?= $type == 'images' ? 'active' : '' ?>" title='Поиск по изображениям роутинга'>
+                                <a href='<?= "display_images_results.php?term=$printTerm&type=images"; ?>'>
                                     Изображения
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                
+                <div class="modalSearchHelp">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="toolTips" data-toggle="modal" data-target="#exampleModal">
+                        <img src="assets/icons/info.png">
+                        Подсказка по поиску
+                        <img src="assets/icons/info.png">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Краткая справка по операторам поиска</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="operatorsDefault">
+                                        Вы можете искать как полное слово, так и его часть. К примеру, если ввести: <kbd>mcaf</kbd> - найдет <kbd>mcafee</kbd>.
+                                    </div>
+                                    <hr>
+                                    <div class="operatorsDefault">
+                                        Также, можно искать основное слово и дополнительное по тексту.  К примеру, если ввести: <kbd>siebel лид</kbd> - найдет все статьи спейса, где указаны эти слова.
+                                    </div>
+                                    <hr>
+                                    <div class="operatorsDefault">
+                                        В поиске по Confluence работает оператор Not. Он позволяет исключать из поисковой выдачи статьи, где есть это слово.  К примеру, если ввести: <kbd>siebel !corporate</kbd> - найдет все статьи со словом Siebel, но в которых нет слова corporate.
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>   
+        </div>
         <?php
             if($type == "sites") {
-                require('database/shortResults5.php');
+                require('database/shortResults.php');
             }
             elseif($type == "ucmdb") {
                 include('database/cmdb_confl/searchCmdb.php');

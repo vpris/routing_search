@@ -48,6 +48,8 @@ $err = curl_error($curl);
 curl_close($curl);
 $object = json_decode($response, true); // Раскодируем Json, приведя его к виду массива
 
+print "<div class='resultCount'>" . "Найдено результатов: " . $object['size'] . "</div>";
+
 if(is_array($object['results'])) {
     $results = array_filter($object['results']);
 } else {

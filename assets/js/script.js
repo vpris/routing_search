@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	// Автозавершение  вводимого текста
 
 	$("#autocomplete_input").autocomplete({
@@ -10,13 +9,24 @@ $(document).ready(function() {
 
 	});
 
+	// find elements
 
-//	$( "#searchResult" ).click(function() {
-//		$( this ).height(300);
-//	});
+	let searchResult = $(".searchResult");
 
+	$(searchResult).each(function() {
+		var button = $(this).find('.showMore');
+		if ($(this).height() >= 400) {
+			$(button).show();
+		} else {
+			$(button).hide();
+		}
+	});
 
-})
+	$(searchResult).click(function () {
+		$(this).toggleClass('searchResultActive');
+	});
+});
+
 
 
 

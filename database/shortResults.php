@@ -79,9 +79,10 @@ foreach ($results['matches'] as $result) {
     // Вывод title, content и любых других полей по желанию
     $resultH = "
     <div class='mainResultsSection'>
-            <div id='searchResult'>
+            <div class='searchResult'>
                 <div class='searchResultHead'>
-                    <div class='titleLink'><a class='result' href='$url'>$title</a></div>";
+                    <div class='titleLink'><a class='result' href='$url'>$title</a></div>
+                    <button class='showMore btn btn-info'><i class='fa fa-ellipsis-h' aria-hidden='true'></i></button>";
     if ($clicks >= 100) {
         $resultH .= " <img title='Популярная запись' src='assets/icons/burn.png' alt='Огонек 1' class='resultImage'> ";
     }
@@ -93,6 +94,7 @@ foreach ($results['matches'] as $result) {
                 </div>
                 <span class='postContent'>Теги: $keywords</span><br>
                 <span class='content'>$content</span>
+
             </div>
     </div>
     ";
