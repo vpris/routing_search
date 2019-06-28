@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 	$(searchResult).each(function() {
 		var button = $(this).find('.showMore');
-		if ($(this).height() >= 400) {
+		if ($(this).height() > 430) {
 			$(button).show();
 		} else {
 			$(button).hide();
