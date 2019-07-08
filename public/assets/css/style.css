@@ -822,7 +822,7 @@ footer p {
 }
 .resultCount {
     position: absolute;
-    top: 165px;
+    top: 195px;
     left: 20px;
     font-size: 13px;
     color: #364459;
@@ -1406,4 +1406,14 @@ header {
     width: 50px;
     height: 35px;
     border-radius: 6px;
+}
+
+.headName {
+    height: 30px;
+    background: black;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }

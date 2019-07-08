@@ -3,7 +3,7 @@ $(document).ready(function() {
 	// Автозавершение  вводимого текста
 
 	$("#autocomplete_input").autocomplete({
-		source: "autocomplete.php",
+		source: "../.ht.src/autocomplete.php",
 		minLength: 1,
 		maxLength: 20,
 

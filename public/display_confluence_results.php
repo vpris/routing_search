@@ -1,5 +1,11 @@
 <?php
 
+    session_start();
+    $get=$_SESSION['s'];
+    require ('../.ht.src/classes/checkCondition.php');
+    $db = new checkingCondition;
+    $db->checkCond($get, $memberof);
+
     if(isset($_GET["term"])) {
         $printTerm = $_GET["term"];
     }
@@ -50,11 +56,16 @@
     <script src="assets/js/jquery.fancybox.min.js"></script>
 </head>
 <body>
+<div class='headName'>
+        <?php
+            print ($get["0"]["extensionattribute1"]["0"]) . ' ' . ($get["0"]["extensionattribute2"]["0"]);
+        ?>
+</div>
 <div class="wrapper">
         <div class="header confl">
             <div class="headerContent">
                 <div class="logoContainer">
-                    <a href="index.php">
+                    <a href="../main.php">
                         <H2>ROUTING</H2>
                     </a>
                     <a href="https://confluence.raiffeisen.ru/display/SDesk/Routing" target="_blank"><button class="forkOnConfl">Страница обсуждения в Confluence</button></a>
@@ -145,16 +156,16 @@
         </div>
         <?php
             if($type == "sites") {
-                require('database/shortResults.php');
+                require('../.ht.src/database/shortResults.php');
             }
             elseif($type == "ucmdb") {
-                include('database/cmdb_confl/searchCmdb.php');
+                include('../.ht.src/cmdb_confl/searchCmdb.php');
             }
             elseif($type == "confluence") {
-                include('database/cmdb_confl/searchConfluence.php');
+                include('../.ht.src/cmdb_confl/searchConfluence.php');
             }   
             else {
-                include('database/shortResultsImages.php');
+                include('../.ht.src/database/shortResultsImages.php');
             }
         ?>
 </body>

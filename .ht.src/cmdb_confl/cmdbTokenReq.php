@@ -4,8 +4,8 @@
 $usr = "root";
 $pwd = "root";
 
-if (file_exists(__DIR__.'/config_conn.php')) {
-    include __DIR__.'/config_conn.php';
+if (file_exists(__DIR__ . '/config_conn.php')) {
+    include __DIR__ . '/config_conn.php';
 }
 
 //Declare variables

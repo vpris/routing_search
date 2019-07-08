@@ -3,8 +3,8 @@
 $hostnameConfl = 'confluence.atlassian.com';
 $credentConfl = 'Your username and password are encrypted'; // You can also transfer a token. Do not forget to change the authorization type from Basic to Bearer.
 
-if (file_exists(__DIR__.'/config_conn.php')) {
-    include __DIR__.'/config_conn.php';
+if (file_exists(__DIR__ . '/config_conn.php')) {
+    include __DIR__ . '/config_conn.php';
 }
 
 $req = $_GET["term"];

@@ -5,8 +5,8 @@ $user = "root";
 $pass = "root";
 $debug = false;
 
-if (file_exists(__DIR__.'/config_local.php')) {
-    include __DIR__.'/config_local.php';
+if (file_exists(__DIR__ . '/config_local.php')) {
+    include __DIR__ . '/config_local.php';
 }
 
 ob_start();

@@ -1,8 +1,10 @@
-
 <?php
 
-
-
+session_start();
+$get=$_SESSION['s'];
+require ('../.ht.src/classes/checkCondition.php');
+$db = new checkingCondition;
+$db->checkCond($get, $memberof);
 
 if(isset($_GET["term"])) {
 	$printTerm = $_GET["term"];
@@ -14,8 +16,8 @@ $type = isset($_GET["type"]) ? $_GET["type"] : "sites";
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 
 
-require('database/conf.php');
-require('database/queryes.php');
+require('../.ht.src/database/conf.php');
+require('../.ht.src/database/queryes.php');
 ?>
 
 
@@ -37,11 +39,16 @@ require('database/queryes.php');
     <script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
+    <div class='headName'>
+        <?php
+            print ($get["0"]["extensionattribute1"]["0"]) . ' ' . ($get["0"]["extensionattribute2"]["0"]);
+        ?>
+    </div>
     <div class="wrapper">
             <div class="header">
                 <div class="headerContent">
                     <div class="logoContainer">
-                        <a href="index.php">
+                        <a href="../main.php">
                             <H2>ROUTING</H2>
                         </a>
                         <a href="https://confluence.raiffeisen.ru/display/SDesk/Routing" target="_blank"><button class="forkOnConfl"> Страница обсуждения в Confluence</button></a>
@@ -129,17 +136,17 @@ require('database/queryes.php');
                     <?php
 
                     if($type == "sites") {
-                        require('database/shortResults5.php');
+                        require('../.ht.src/database/shortResults.php');
                     }
                     elseif($type == "ucmdb") {
-                        include('database/cmdb_confl/searchCmdb.php');
+                        include('../.ht.src/cmdb_confl/searchCmdb.php');
                     }
                     elseif($type == "confluence") {
-                        include('database/cmdb_confl/searchConfluence.php');
+                        include('../.ht.src/cmdb_confl/searchConfluence.php');
                     }
                     else {
                         print "<div class='imageWrap'>";
-                            include('database/shortResultsImages.php');
+                            include('../.ht.src/database/shortResultsImages.php');
                         print "</div>";
                     }
 

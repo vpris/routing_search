@@ -1,0 +1,190 @@
+html, body {
+    height: 100%;
+    background: #fff;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+.loginBlock {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 530px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background: #00000024;
+    border: 1px solid #0000004d;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+#userLogin {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#userMail {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#userPass1 {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#userPass2 {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#submitButton {
+    width: 265px;
+    height: 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(to right bottom, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em #212121;
+    cursor: pointer;
+}
+
+
+/* ÃƒÆ’Ã‚ÂÃƒâ€¦Ã‚Â¸ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â³ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â¾ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â´ÃƒÆ’Ã‚ÂÃƒâ€šÃ‚Â° php */
+
+.weather {
+    width: 130px;
+    background: #9E9E9E;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 6px;
+    border: 1px #000 solid;
+    margin: 20px;
+}
+
+.queryCityBlock {
+    margin: 0 auto;
+    background: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* flex-direction: column; */
+}
+
+.wrappers {
+    background: #82abbd;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.iconWeather {
+    width: 70px;
+}
+
+.error {
+    background: #000;
+    height: 42px;
+    color: #fff;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+}
+
+header {
+    height: 30px;
+    background: black;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.loginSuccessBlock {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 330px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background: #00000024;
+    border: 1px solid #0000004d;
+}
+
+.welcome {
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #212121;
+}
+
+.welcomeName {
+    width: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #212121;
+}
+
+.welcomeAuth {
+    width: 300px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px black, 0 0 1em #212121;
+}

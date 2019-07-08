@@ -1,5 +1,10 @@
-
 <?php
+
+session_start();
+$get=$_SESSION['s'];
+require ('../.ht.src/classes/checkCondition.php');
+$db = new checkingCondition;
+$db->checkCond($get, $memberof);
 
 if(isset($_GET["term"])) {
 	$printTerm = $_GET["term"];
@@ -29,7 +34,7 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
         <div class="header cmdb">
             <div class="headerContent">
                 <div class="logoContainer">
-                    <a href="index.php">
+                    <a href="../main.php">
                         <H2>ROUTING</H2>
                     </a>
                     <a href="https://confluence.raiffeisen.ru/display/SDesk/Routing" target="_blank"><button class="forkOnConfl"> Страница обсуждения в Confluence</button></a>
@@ -102,16 +107,16 @@ $page = isset($_GET["page"]) ? $_GET["page"] : 1;
             <?php
 
                 if($type == "sites") {
-                    require('database/shortResults5.php');
+                    require('../.ht.src/database/shortResults.php');
                 }
                 elseif($type == "ucmdb") {
-                    include('database/cmdb_confl/searchCmdb.php');
+                    include('../.ht.src/cmdb_confl/searchCmdb.php');
                 }
                 elseif($type == "confluence") {
-                    include('database/cmdb_confl/searchConfluence.php');
+                    include('../.ht.src/cmdb_confl/searchConfluence.php');
                 }
                 else {
-                    include('database/shortResultsImages.php');
+                    include('../.ht.src/database/shortResultsImages.php');
                 }
 
             ?>

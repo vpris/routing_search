@@ -2,12 +2,16 @@
 
 // Database configuration
 $dbHost     = '127.0.0.1';
-$dbUsername = 'root';
-$dbPassword = 'ekmnhf,er1993';
+$user = "root";
+$pass = "root";
 $dbName     = 'tests';
 
+if (file_exists(__DIR__ . 'database/config_local.php')) {
+    include __DIR__ . 'database/config_local.php';
+}
+
 // Connect with the database
-$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+$db = new mysqli($dbHost, $user, $pass, $dbName);
 
 // Get search terms
 $searchTerm = $_GET['term'];

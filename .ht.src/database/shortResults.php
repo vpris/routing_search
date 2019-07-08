@@ -1,11 +1,12 @@
 <?php
+error_reporting(0);
 
-assert_options(ASSERT_WARNING, 0);
+//assert_options(ASSERT_WARNING, 0);
 
 // Include the api class
-Require('vendor/autoload.php');
+Require('D:/server/data/htdocs/routing/vendor/autoload.php');
 
-$perpage = 50;
+$perpage = 1;
 
 // Include the file which contains the function to display results
 $client = new SphinxClient();
@@ -21,7 +22,7 @@ $client->SetLimits (($page-1)*$perpage,$perpage);
 $q = !empty($_GET['term']) ? $_GET['term'] : '';
 
 // Compute the pagination
-$client->setLimits(0,$perpage*20);
+$client->setLimits(0,$perpage*30);
 
 display_results(
     $result = $client->Query($q));
@@ -38,10 +39,6 @@ if ( !$result )
 
 $current_page = 1;
 $tot_pages = 10;
-
-
-
-
 
 // Функция показа результатов в красивом формате
 function display_results($results, $message = null)
@@ -84,7 +81,7 @@ foreach ($results['matches'] as $result) {
                     <div class='titleLink'><a class='result' href='$url'>$title</a></div>
                     <button class='showMore btn btn-info'><i class='fa fa-ellipsis-h' aria-hidden='true'></i></button>";
     if ($clicks >= 100) {
-        $resultH .= " <img title='Популярная запись' src='assets/icons/burn.png' alt='Огонек 1' class='resultImage'> ";
+        $resultH .= " <img title='Популярная запись' src='http://s-msk-p-appsd.raiffeisen.ru/routing/public/assets/icons/burn.png' alt='Огонек 1' class='resultImage'> ";
     }
     $resultH .= "   <div class='rightBlocks'>
                         <div class='adOrOther'>$AdOrOther</div>
